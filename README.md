@@ -10,4 +10,4 @@ Running the the_bot
 * python the_bot.py
 
 TODO - possibly change hunterio key, since I spammed this one a lot, and got over the amount of requests I have 
-
+P.S. I do know its not safe to keep keys like hunterio and clearbit in conf, and use env vars instead, but should be easier to run like this!
