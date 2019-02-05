@@ -1,0 +1,9 @@
+{
+  "number_of_users": 5,
+  "max_posts_per_user": 8,
+  "max_likes_per_user": 5,
+  "email_name": "churava13",
+  "email_domain": "@gmail.com",
+  "password": "Qwer4321!",
+  "api_server_url": "http://127.0.0.1:3432/api"
+}
