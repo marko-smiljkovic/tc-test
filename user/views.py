@@ -15,10 +15,11 @@ class UserSignupResource(APIView):
         # TODO change validation to use marshmallow for example
         email = request.data.get("email", None)
         password = request.data.get("password", None)
+        print(email)
         user = models.TCTestUser.register(email, password)
         user.save()
 
-        return Response({'message': 'User successfully registered'})
+        return Response(serializers.UserSerializer(user).data)
 
 
 class PostResource(APIView):

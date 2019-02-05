@@ -39,6 +39,7 @@ class TCTestUser(User):
             settings.HUNTERIO_API_KEY,
             settings.HUNTERIO_API_URL,
         )
+        # Comment this if hunterio key fails
         if hunterio_client.check_email(email) is not True:
             raise exceptions.InvalidEmailException
 
@@ -50,6 +51,8 @@ class TCTestUser(User):
 
         # Getting more data if available from clearbit
         clearbit.key = settings.CLEARBIT_API_KEY
+        # Comment the enrichment and uncomment the empty dict to make it run faster if doing mass register through bot
+        # lookup = {}
         lookup = clearbit.Enrichment.find(email=email, stream=True)
         if "person" in lookup and "name" in lookup["person"]:
             new_user.first_name = lookup["person"]["name"].get("givenName", None)
